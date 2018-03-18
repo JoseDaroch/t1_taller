@@ -1,11 +1,13 @@
 class CreateEntries < ActiveRecord::Migration[5.0]
   def change
     create_table :entries do |t|
-      t.text :content
+      t.text :titulo
+      t.text :bajada
+      t.text :cuerpo
       t.references :user, foreign_key: true
 
       t.timestamps
     end
-    add_index :microposts, [:user_id, :created_at]
+  add_index :microposts, [:user_id, :created_at]
   end
 end
