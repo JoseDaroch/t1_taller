@@ -4,10 +4,22 @@
   <head>
     <title><%= yield(:title) %> | Ultimo minuto</title>
   </head>
-  <body>
-    <h1>Noticias</h1>
-    <p>
 
-    </p>
-  </body>
+  <% if logged_in? %>
+    <body>
+      <h1>News</h1>
+      <p>
+
+      </p>
+    </body>
+  <% else %>
+    <body>
+      <h1>First time here?</h1>
+      <h2> <%= link_to "Sign up", signup_path, class: "btn btn-default btn-lg" %><br> </h2>
+      <br>
+    </body>
+  <% end %>
+
+
+
 </html>

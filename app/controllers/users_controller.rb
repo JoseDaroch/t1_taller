@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :admin)
     end
 
     def logged_in_user
@@ -67,9 +67,11 @@ class UsersController < ApplicationController
     end
 
     def logged_in_admin
-      unless current_user.admin?
-        flash[:danger] = "Private information"
-        redirect_to root_url
+      unless logged_in?
+        unless current_user.admin?
+          flash[:danger] = "Private information"
+          redirect_to root_url
+        end
       end
     end
 
