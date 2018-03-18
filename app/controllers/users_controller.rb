@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome!"
       redirect_to @user
     else
       render 'new'
@@ -69,5 +69,7 @@ class UsersController < ApplicationController
       unless current_user.admin?
         flash[:danger] = "Private information"
         redirect_to root_url
+      end
+    end
 
 end
