@@ -6357,3 +6357,40 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 74ms (Views: 69.7ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-19 04:49:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "entries"[0m
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered collection of entries/_entry.html.erb [2 times] (82.5ms)
+  Rendered shared/_feed.html.erb (96.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (99.3ms)
+Completed 200 OK in 1208ms (Views: 1089.2ms | ActiveRecord: 11.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-03-19 04:49:43 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"f2rXfePlGWPI3w9IDV2xykS/QOETN1O9NISlfj+YOAOVRDQvxTse9MpwpeNXSdYmpA1BNG2kl4VPa9NPpxIiaQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-19 04:49:43 -0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 59.9ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3375585411118961250);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (13.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3375585411118961250)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
