@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
 
   def administrator
     @entry = current_user.entries.build if logged_in?
+    @entries = Entry.all
   end
 
 end
