@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :microposts
+  has_many :entries, dependent: :destroy
 
   before_save { email.downcase! }
 
@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  def feed
+    Entry.all
+  end
 end

@@ -8,6 +8,6 @@ class CreateEntries < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-  add_index :microposts, [:user_id, :created_at]
+  add_index :entries, [:user_id, :created_at]
   end
 end

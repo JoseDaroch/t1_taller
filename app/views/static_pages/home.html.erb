@@ -6,26 +6,12 @@
   </head>
 
   <% if logged_in? %>
-
-    <% if logged_in_admin? %>
-      <div class="row">
-        <aside class="col-md-4">
-          <section class="user_info">
-            <%= render 'shared/user_info' %>
-          </section>
-          <section class="entry_form">
-            <%= render 'shared/entry_form' %>
-          </section>
-        </aside>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Entries Feed</h3>
+          <%= render 'shared/feed' %>
       </div>
-    <% end %>
-
-  <body>
-    <h1>News</h1>
-    <p>
-
-    </p>
-  </body>
+    </div>
 
   <% else %>
     <body>
