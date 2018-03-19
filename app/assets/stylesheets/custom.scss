@@ -37,12 +37,19 @@ h1 {
 }
 
 h2 {
+  font-size: 1.8em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+h5 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
 }
 
 p {
@@ -149,8 +156,10 @@ input {
 .entries {
   list-style: none;
   padding: 0;
+  ;
   li {
     padding: 10px 0;
+    margin-left: 150px;
     border-top: 1px solid #e8e8e8;
   }
   .user {
@@ -177,4 +186,18 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+.scroll-area-entries{
+  text-align: center;
+  width:635px;
+  height:250px;
+  margin-top:0px;
+  margin-bottom:20px;
+  margin-left:200px;
+  padding-left: 10px;
+  padding-top: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  float:left;
+  overflow-y: auto;
 }
