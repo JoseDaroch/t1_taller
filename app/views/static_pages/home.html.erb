@@ -5,22 +5,10 @@
     <title><%= yield(:title) %> | Ultimo minuto</title>
   </head>
 
-  <% if logged_in? %>
-    <div class="row">
-      <div class="col-md-8">
-        <h3>Entries Feed</h3>
-          <%= render 'shared/feed' %>
-      </div>
-    </div>
-
-  <% else %>
-    <body>
-      <h1>First time here?</h1>
-      <h2> <%= link_to "Sign up", signup_path, class: "btn btn-default btn-lg" %><br> </h2>
-      <br>
-    </body>
+  <h1>Entries Feed</h1>
+  <% if @entries.any? %>
+    <ol class="entries">
+      <%= render @entries %>
+    </ol>
   <% end %>
-
-
-
 </html>
