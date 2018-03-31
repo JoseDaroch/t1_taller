@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get '/administrator', to: 'static_pages#administrator'
 
   resources :users
-  resources :entries
+  resources :entries do
+    resources :comments
+  end
 
 
 

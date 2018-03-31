@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+    @comments = @entry.comments.all
   end
 
   def new
